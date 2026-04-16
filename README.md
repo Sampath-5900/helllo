@@ -1,4 +1,4 @@
-###COIT20246 Networking and Cyber Security Journal###
+###COIT20246 Networking and Cyber Security Journal
 
 Student Name : Sampath Rikkala
 
@@ -8,7 +8,7 @@ Campus : MELBOURNE
 
 Tutor : MR DAVID LING
 
-###Weekly Journal Entries###
+###Weekly Journal Entries
 
 1. Unit Introduction
 
@@ -18,7 +18,7 @@ Tutor : MR DAVID LING
 
 4. Network Technologies
 
-###Quick Links###
+###Quick Links
 
 Moodle
 

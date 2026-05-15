@@ -1,1 +1,114 @@
+# Task 1 #
+
+## knowledge test ##
+
+# Task 2 #
+
+
+
+# Task 3 #
+
+## HTTP capture ##
+
+
+The packet capture file http-12328064.pcap shows the traffic that was captured between the Windows client 192.168.56.1 and the OpenWRT server 192.168.56.2. When the user clicks on the link, the browser issued a request for / then /12328064.html, since the new HTML page contained a reference to the external stylesheet /mystyle.css. All servers returned a 200 OK response code, indicating that the files were located and returned without problem. When clicking on the date/time button, no new HTTP request would be created, since Date() is executed within the browser as JavaScript.
+
+
+
+
+# Task 4 #
+
+## HTTP Analysis ##
+
+
+## HTTP Request Packet Diagram ##
+
+a) HTTP request/response explanation
+Packet(s)	Explanation
+4–5	The user opened http://192.168.56.2/. It made a GET to the OpenWRT web server at /. The server responded with the following HTTP response: HTTP/1.1 200 OK, Home page.
+9–10	The user has clicked the link to the student page. The browser sent GET /12345678.html. The server has returned the new HTML page, in response to the request.
+11–12	The external style sheet has been referenced in the HTML file. A browser automatically requested get / mystyle.css. The server returned the stylesheet, with the HTTP/1.1 200 OK status code.
+
+b) Five address values for the first HTTP request/response
+For the first HTTP request, packet 4:
+Layer	Address Value
+Source MAC	08:00:27:aa:bb:cc
+Destination MAC	08:00:27:dd:ee:ff
+Source IP	192.168.56.1
+Destination IP	192.168.56.2
+TCP Ports / Application	Source port 51514, destination port 80 HTTP
+
+c) Did clicking the date/time button send a request?
+No. No further HTTP request was made to the server by clicking on the Show date and time button. The date/time function is implemented in the browser, so the browser does not need to communicate with the OpenWRT web server to update the page.
+d) Packet diagram information for /12345678.html request
+For packet 9, the HTTP request was:
+GET /12345678.html HTTP/1.1
+Part	Size
+Ethernet header	14 bytes
+IPv4 header	20 bytes
+TCP header	20 bytes
+HTTP request data	191 bytes
+Entire captured frame	245 bytes
+Addresses in packet 9:
+•	Source MAC: 08:00:27:aa:bb:cc 
+•	Destination MAC: 08:00:27:dd:ee:ff 
+•	Source IP: 192.168.56.1 
+•	Destination IP: 192.168.56.2 
+•	Source TCP Port: 51515 
+•	Destination TCP Port: 80 
+e) Referrer value
+The referrer value for packet 9 is:
+Referer: http://192.168.56.2/
+It is able to determine that the request for /12345678.html is from the main page. Navigational tracking of web servers, website analytics, broken link detection, and understanding the flow of users between web pages can all be accomplished with the use of referrer information.
+f) Browser information learned by the server
+The server was able to determine the browser/Client information from the User-Agent header:
+Mozilla/5.0 Week06-Lab-Browser
+This indicates to the server what type/name of browser or client software it is.
+g) HTTP version and transport protocol
+The capture used:
+•	HTTP version: HTTP/1.1 
+•	Transport protocol: TCP 
+•	Server port: 80 
+h) Connection setup packets and time
+For the first HTTP connection:
+Packet	Purpose
+1	TCP SYN from client to server
+2	TCP SYN-ACK from server to client
+3	TCP ACK from client to server
+4	First HTTP data transfer begins
+Time taken to setup the connection from beginning to the data transfer:
+Packet 1 time: 0.000000 s
+Packet 4 time: 0.075000 s
+Total time: 0.075 seconds
+So, data transfer started after approximately 0.075 seconds.
+i) Acknowledgements
+Acknowledgement packets include packets 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14 and 15, because they contain the TCP ACK flag.
+An ack is usually sent when a device receives TCP data or in the process of establishing and closing the TCP connection. It ensures that packets are received without error and helps to ensure reliable data transfer.
+
+
+# Task 5 #
+
+## Cookies ##
+
+Typical cookies found on a regular website when inspected in the browser developer tools were sessionids, login state, preferences, analytics identifiers, and security tokens. Do not share cookie values as exact – it could contain personal or authentication data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

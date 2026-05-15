@@ -1,1 +1,59 @@
+# Task 1 #
+
+## Knowledge test ## 
+
+
+# Task 3 #
+
+## Collecting Network Information ##
+
+I opened up PowerShell on the Windows host and got the list of all adapters using the Get-NetAdapter function. I was able to identify a VirtualBox Host-Only Ethernet Adapter and use Get-NetIPAddress -InterfaceAlias VirtualBox Host-Only to check the IPv4 address. The default host address for this lab is 192.168.56.1. I also ran the Get-NetRoute -DestinationPrefix "192.168.56.1." command to look for 192.168.56.1/24.
+
+
+
+I then logged into OpenWRT via PuTTY and executed ip addr to see if I could see any guest interfaces. I has recorded eth0, eth1 and br-mng with their ip addresses. I then ran the command ip route to see the routing table. The default route is crucial as it determines to OpenWRT where to route internet traffic when it is not being sent through some of its other interfaces. It is usually the NAT interface.
+
+
+
+Device	Interface	IP Address	VirtualBox Adapter Type	Purpose
+Windows Host	Wi-Fi/Ethernet	Your LAN IP	Physical adapter	University/home network and internet
+Windows Host	VirtualBox Host-Only	192.168.1.1	Host-only	Connects Windows to OpenWRT
+OpenWRT VM	eth0	192.168.1.1	Host-only	Management access from Windows
+OpenWRT VM	eth1	DHCP/NAT IP	NAT	Internet access for OpenWRT
+OpenWRT VM	br-mng	Management IP	Bridge	OpenWRT management interface
+
+
+# Task 4 #
+
+## Network Diagram ##
+
+I have made a network diagram of my lab setup. The Windows PC provides a physical WiFi/Ethernet port for Internet connectivity and a VirtualBox "host-only" port for managing the OpenWRT system. The OpenWRT VM has eth0 (host-only), eth1 (NAT internet connection) and br-mng (management). Labelled IP addresses provided clarity about each of the interfaces' roles.
+
+# Task 5 #
+
+## Self-Evaluation of Teamwork ##
+
+The offered suggestions were to have clear roles, frequent communication, GitHub issues, reviewing each others work, and making frequent commits. We need to make responsibilities more specific and make smaller changes more frequently as we already do discuss progress and divide tasks with my team.
+I also checked the GitHub repository using Insights > Contributors. This view presents the number of commits each team member has made. If there is one member with a lot more commits then the workload could be uneven or some work may not be recorded. For the rest of the project, we need to try to assign tasks earlier, set clear expectations about commits, and review the contributor graph on a weekly basis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

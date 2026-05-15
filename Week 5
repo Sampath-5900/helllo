@@ -1,1 +1,52 @@
+# Task 1 #
+
+## knowledge test ##
+
+# Task 2 #
+
+## Routing Table ##
+A PowerShell script to get all the net routes for address family IPv4. Each row is read, and the lowest appropriate metric on the next hop and interface is selected. If one of the next hop elements is 0.0.0.0, the destination is directly connected. When there is no more specific route, "0.0.0.0/0" is the default route.
+
+
+# Task 3 #
+
+## IP Network Design ##
+
+This design describes two switched Ethernet LANs connected to each other via two routers and a 1 Gb/s Ethernet WAN. Networks are used: 80.64.1.0/24 for LAN 1 and 25.93.1.0/24 for LAN 2. All networks use the subnet mask 255.255.255.0.
+
+
+
+Simplify the routing: LAN 1 will process local traffic directly, and send all other traffic to 80.64.1.1.  Router 1 has directly connected routes to 80.64.1.0/24 and 10.0.0.0/24, plus a static route to 25.93.1.0/24 via 10.0.0.2. Router 2 has directly connected routes to 25.93.1.0/24 and 10.0.0.0/24, plus a static route to 80.64.1.0/24 via 10.0.0.1. LAN 2 hosts use 25.93.1.1 as their default gateway.
+
+
+
+
+Assuming the IP source is 80.64.1.11, and the IP destination is 25.93.1.11, then for a ping from PC1 to PC4, the IP source would be 25.93.1.11 and the IP destination would be 80.64.1.11. The Ethernet MAC addresses only change at each hop: on the WAN link, the source MAC address is Router 1 WAN and the destination MAC address is Router 2 WAN.
+
+# Task 4 # 
+
+## Academic Integrity ##
+
+This scenario is a student handing in a duplicate or plagiarised work. Academic integrity is defined as honesty, trust, fairness, respect, and responsibility, and intentional or unintentional actions that compromise these values are considered academic integrity breaches at CQUniversity. Depending on the severity of the matter, it can be inappropriate academic behavior or serious academic misconduct. Recommendations: Assessments should be started early to allow students time to digest the assignment, ask questions, prepare a preliminary draft, and make corrections prior to submission. The need to work to the last minute may lead to copying, improper referencing, or excessive dependence on others. Students should then record their own notes and progress as a record of what is their work. All websites, textbooks, journal articles, images, code, and AI support provided must be accurately referenced in the specified style. Peer support is only for general discussion and understanding, and not for sharing/copying answers. Use of AI for answering an assessment only when expressly permitted by assessment instructions; all use of AI should be clear, and credit should be given. These are steps that will help students prevent plagiarism, maintain academic integrity, and help to ensure the work submitted is truly their own.
+
+# Task 5 # 
+
+## IP Address Lookup ##
+
+In most cases, an IP lookup website will be used to determine the public IP address of the network and not the private IP address of the computer. The ISP and approximate city or region may be displayed for Home Wi-Fi, or a carrier gateway location may be displayed for mobile data. Normally, it is not able to determine the exact address of a user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -18,3 +18,25 @@ https://github.com/cquict2025/coit20246y26t1-project-coit20246_mel_b3_saqib_samp
 #Task 3#
 The first diagram illustrates a simple LAN that has four end devices attached directly to a switch. A typical LAN topology as the switch learns MAC addresses, forwarding is done only to the proper port.
 
+
+
+The second diagram extends the LAN by providing two access switches that each connect to a central switch. Its layout works in a star topology, providing a clear structure for connection of 8 PCs and a well-organised cabling.
+
+# Task 4 #
+
+
+
+
+
+
+
+
+
+### ARP packets ###
+The virtual network interface was used to connect the Windows host and the OpenWRT Linux guest for the ping capture. The devices first had to learn the destination MAC address of the local network to be able to exchange ICMP packets. This discovery process was finished with ARP. The first ARP packet sent by the sender was an ARP request to determine which device possessed a target IP address. The destination address for Ethernet was FF:FF:FF:FF:FF:FF, as the sender did not yet have the target MAC address. The one with the same IP address replied with its MAC address, allowing the sender to add it to, or modify its ARP table. Ping was used during address resolution using ICMP Echo Request and ICMP Echo Reply messages. 
+
+### ICMP packets ###
+The first packet is an Echo Request sent by the source to the destination to check if the destination is reachable. It was encapsulated in an Ethernet frame and then in an IPv4 packet. The second ICMP packet was an Echo Reply packet sent back by the destination confirming that the device was reachable and that the two way communication was successful. Here, the protocol layering is evident, as the ICMP layer gives the diagnostic message, the IPv4 layer gives the logical addressing/routing information, and the Ethernet layer gives the local delivery using the MAC address. In Wireshark, these layers can be expanded to see information about each header field, such as the source and destination MAC addresses, source and destination IP addresses, ICMP type, code, identifier, and sequence number. As a whole, the capture shows that the ARP usually takes place before the first ping exchange, when the MAC address is not known, that ICMP is started after the necessary link-layer address has been learnt.
+
+# Task 5 #
+The ARP table can be displayed using PowerShell with arp -a or Get-NetNeighbor. Reachable entries typically contain the default gateway, local virtual adapters and other local devices that were recently contacted. As showcased within the figure the first connected device has the IP address 192.168.31/.28 and the other is having the IP address 192.168.250.1.

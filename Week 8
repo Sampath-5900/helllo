@@ -4,3 +4,76 @@
 
 ## Task 2  Login to Microsoft Learn on Demand ##
 
+I went to Microsoft Learn on Demand and using the training key provided in Moodle, I registered a Skillable account with my CQU email. Once I logged out, I signed in again with the Skillable Account. I then went to the COIT20246 class and started the Azure Fundamentals lab activities. What's important to note here is that this tutorial does not access my own Microsoft or CQU Azure account, instead it makes use of a lab system that allocates temporary Azure accounts for each task.
+
+# Task 3 #
+
+## Create an Azure Resource ##
+
+In Module 01, I created an Azure resource and checked the things that were appearing in the Azure Portal refer figure 1. The primary resources consisted of an Azure resource group, a container for a group of Azure services, and the Azure service that was selected in the lab. Using a resource group is helpful because all the resources that you use to create one task are grouped together and are easier to manage and to delete at a later time. This task made me realize that cloud resources are not isolated resources; they rely on other services including access control, networking and storage services.
+
+
+# Task 4 #
+
+## Create an Azure Virtual Machine and Allow Web Access ##
+
+For the Module 02, I had to build an Ubuntu Virtual Machine and install Nginx to run a simple web page. Initially, opening the public IP address in a browser resulted in a timeout for the lack of allowing HTTP traffic refer figure 1. I went to the Azure Portal and opened the network security group and created an inbound rule for HTTP on port 80. Once the rule was implemented, the website was opened. The site was opened after the rule. Then I logged into the VM via SSH using the username of azureuser and opened /var/www/html/index.html with nano. I saved the page and refreshed the browser, and my name was there. This showed that everything was functioning as expected: VM, web server, public IP, security rule refer to figure 2.
+
+# Task 5 #
+
+## Compare Cloud vs On-premise Costs ##
+
+Option	Example specification	Upfront cost	Estimated 1-year cost	Estimated 3-year cost
+Consumer desktop PC	Intel Core i5, 16 GB RAM, 512 GB SSD	AUD $1,099	AUD $1,099 plus electricity	AUD $1,099 plus electricity/maintenance
+Azure Linux VM	D2s v5 style VM, 2 vCPU, 8 GB RAM	AUD $0 upfront	About AUD $1,250-$1,400 if left on continuously	About AUD $3,750-$4,200 if left on continuously
+
+For comparison of cost, I made a similar mid-range virtual machine in the cloud to a desktop PC for the user. The desktop PC is more expensive up front, but requires no charges by the compute hour. The Azure VM is a more budget-friendly option, and it can be deployed rapidly, but can cost more if it is deployed and used for a year or three years. Cloud computing offers greater flexibility as resources can be resized, stopped, deleted and created as needed. But, on-premise hardware may be less expensive for long-term use and may afford physical control. If you need the lab for short-term use, testing, scaling or remote access, cloud is the better solution, if you need the lab for regular use, it is better to have a desktop PC refer to figure 3.
+
+# Task 6 #
+
+## Create a storage Blob in Azure ##
+
+### Azure CLI Commands Used / To Record ###
+
+az group create --name <RESOURCE-GROUP> --location <REGION>
+az vm create --resource-group <RESOURCE-GROUP> --name my-vm --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys --public-ip-sku Standard
+az vm extension set --resource-group <RESOURCE-GROUP> --vm-name my-vm --name customScript --publisher Microsoft.Azure.Extensions --version 2.1 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"],"commandToExecute":"./configure-nginx.sh"}'
+ssh -l azureuser <PUBLIC-IP-ADDRESS>
+sudo nano /var/www/html/index.html
+
+### Resources Created ###
+Azure Resource	Purpose	Evidence / Screenshot
+Resource group	Container that groups all lab resources so they can be managed together.	Azure Portal All resources
+Ubuntu virtual machine	Cloud server running Linux and Nginx for the website.	VM overview / browser test
+Network Security Group	Firewall-style rules that allow SSH and HTTP traffic.	Inbound security rules
+Public IP address	Internet-facing address used to access the VM website and SSH.	VM public IP field
+Virtual network / NIC / disk	Supporting networking and storage used by the VM.	Azure resource list
+
+### Network Security Rules ###
+Port	Protocol / Rule	Explanation
+22	SSH / TCP	Allows secure terminal login to the Ubuntu VM, normally using Cloud Shell or another SSH client.
+80	HTTP / TCP	Allows a web browser to access the Nginx website hosted on the VM.
+
+
+# Task 7 # 
+
+## 
+
+The optional storage blob activity illustrates how Azure stores files in containers and manages the visibility of the files (private or anonymous). The storage account configuration will need to be altered before the container can be made public if anonymous access is disabled. The resource lock task describes what protection settings are - delete lock means that data may not be deleted, and read-only lock means that data may not be deleted or modified refer figure 4-5. These controls are beneficial in the real environment as they help to minimize the potential for unintentional changes to valuable cloud resources.
+	Read Only Lock Vs Delete Lock
+Lock Type	Allows	Blocks	Best For
+Read-only lock	View only	Changes and deletion	Protecting resources from any modification
+Delete lock	View and edit	Deletion only	Preventing accidental deletion
+
+
+
+
+
+
+
+
+
+
+
+
+

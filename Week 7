@@ -2,6 +2,8 @@
 
 ## Knowledge test ## 
 
+![knowledge test week7](pictures/knowledge test week7)
+
 
 # Task 3 #
 
@@ -26,6 +28,8 @@ OpenWRT VM	br-mng	Management IP	Bridge	OpenWRT management interface
 # Task 4 #
 
 ## Network Diagram ##
+
+![NetworkDiagram.drawio](pictures/NetworkDiagram.drawio)
 
 I have made a network diagram of my lab setup. The Windows PC provides a physical WiFi/Ethernet port for Internet connectivity and a VirtualBox "host-only" port for managing the OpenWRT system. The OpenWRT VM has eth0 (host-only), eth1 (NAT internet connection) and br-mng (management). Labelled IP addresses provided clarity about each of the interfaces' roles.
 

@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="p1DyHOJVjBIRs1rZM-Dj">
+    <mxGraphModel dx="1488" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-1" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" value="OpenWRT Virtual Machine" vertex="1">
+          <mxGeometry height="336" width="751" x="1006" y="121" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-2" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" value="VirtualBox" vertex="1">
+          <mxGeometry height="148" width="1226" x="531" y="477" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-3" parent="1" style="whiteSpace=wrap;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" value="Windows Host PC" vertex="1">
+          <mxGeometry height="617" width="310" x="20" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-4" parent="1" style="ellipse;aspect=fixed;strokeWidth=2;whiteSpace=wrap;" value="Internet" vertex="1">
+          <mxGeometry height="73" width="73" x="1918" y="277" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-5" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Physical Adapter&#xa;Wi-Fi / Ethernet&#xa;IP: your Windows internet IP" vertex="1">
+          <mxGeometry height="126" width="260" x="45" y="91" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-6" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="VirtualBox Host-Only Adapter&#xa;IP: 192.168.56.1" vertex="1">
+          <mxGeometry height="102" width="260" x="45" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-7" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="Host-Only Network&#xa;192.168.56.0/24" vertex="1">
+          <mxGeometry height="78" width="195" x="559" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-8" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="VirtualBox NAT Network" vertex="1">
+          <mxGeometry height="54" width="231" x="1487" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-9" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="eth0&#xa;Host-Only Adapter&#xa;IP: 192.168.56.2" vertex="1">
+          <mxGeometry height="102" width="191" x="1031" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-10" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="eth1&#xa;NAT Adapter&#xa;IP: DHCP / NAT IP" vertex="1">
+          <mxGeometry height="102" width="186" x="1034" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-11" parent="1" style="whiteSpace=wrap;strokeWidth=2;" value="br-mng&#xa;Management Bridge&#xa;IP: OpenWRT management IP" vertex="1">
+          <mxGeometry height="126" width="260" x="1472" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-12" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-5" style="startArrow=none;endArrow=block;exitX=1;exitY=0.07;entryX=0.24;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;elbow=vertical;" target="luDMEH-2lXaQzOKnhCnA-4" value="Normal internet access">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-13" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-6" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" target="luDMEH-2lXaQzOKnhCnA-7" value="Host-only connection">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-14" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-7" style="startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.4;entryY=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="luDMEH-2lXaQzOKnhCnA-9" value="Connects Windows to OpenWRT">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="551" />
+              <mxPoint x="1020" y="310" />
+              <mxPoint x="1107" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-15" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-10" style="startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.33;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="luDMEH-2lXaQzOKnhCnA-8" value="Default route / internet traffic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-16" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-8" style="startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0.25;entryY=1.01;rounded=0;edgeStyle=orthogonalEdgeStyle;" target="luDMEH-2lXaQzOKnhCnA-4" value="NAT connection">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-17" edge="1" parent="1" source="luDMEH-2lXaQzOKnhCnA-9" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;rounded=0;" target="luDMEH-2lXaQzOKnhCnA-11" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="luDMEH-2lXaQzOKnhCnA-18" edge="1" parent="1" style="curved=1;dashed=1;dashPattern=2 3;startArrow=none;endArrow=block;rounded=0;" target="luDMEH-2lXaQzOKnhCnA-1" value="Access OpenWRT web interface / SSH using PuTTY">
+          <mxGeometry relative="1" x="0.0008" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="320" y="289" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

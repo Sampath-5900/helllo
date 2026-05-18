@@ -2,14 +2,21 @@
 
 ## knowledge test ##
 
+![[ knowledge test](pictures/knowledge test week6.png)
+
 # Task 2 #
 
+![12328064.html](pictures/12328064.html)
 
+![index.html](pictures/index.html)
+
+![mystyle.css](pictures/mystyle.css)
 
 # Task 3 #
 
 ## HTTP capture ##
 
+![http-12328064.pcap](pictures/http-12328064.pcap)
 
 The packet capture file http-12328064.pcap shows the traffic that was captured between the Windows client 192.168.56.1 and the OpenWRT server 192.168.56.2. When the user clicks on the link, the browser issued a request for / then /12328064.html, since the new HTML page contained a reference to the external stylesheet /mystyle.css. All servers returned a 200 OK response code, indicating that the files were located and returned without problem. When clicking on the date/time button, no new HTTP request would be created, since Date() is executed within the browser as JavaScript.
 
@@ -22,6 +29,8 @@ The packet capture file http-12328064.pcap shows the traffic that was captured b
 
 
 ## HTTP Request Packet Diagram ##
+
+![week6-1.drawio](pictures/week6-1.drawio)
 
 a) HTTP request/response explanation
 Packet(s)	Explanation

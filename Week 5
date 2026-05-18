@@ -2,6 +2,8 @@
 
 ## knowledge test ##
 
+![knowledge test](pictures/knowledge test week5.png)
+
 # Task 2 #
 
 ## Routing Table ##
@@ -14,11 +16,12 @@ A PowerShell script to get all the net routes for address family IPv4. Each row 
 
 This design describes two switched Ethernet LANs connected to each other via two routers and a 1 Gb/s Ethernet WAN. Networks are used: 80.64.1.0/24 for LAN 1 and 25.93.1.0/24 for LAN 2. All networks use the subnet mask 255.255.255.0.
 
+![week-5.drawio](pictures/week-5.drawio)
 
 
 Simplify the routing: LAN 1 will process local traffic directly, and send all other traffic to 80.64.1.1.  Router 1 has directly connected routes to 80.64.1.0/24 and 10.0.0.0/24, plus a static route to 25.93.1.0/24 via 10.0.0.2. Router 2 has directly connected routes to 25.93.1.0/24 and 10.0.0.0/24, plus a static route to 80.64.1.0/24 via 10.0.0.1. LAN 2 hosts use 25.93.1.1 as their default gateway.
 
-
+![week5-1.drawio](pictures/week5-1.drawio)
 
 
 Assuming the IP source is 80.64.1.11, and the IP destination is 25.93.1.11, then for a ping from PC1 to PC4, the IP source would be 25.93.1.11 and the IP destination would be 80.64.1.11. The Ethernet MAC addresses only change at each hop: on the WAN link, the source MAC address is Router 1 WAN and the destination MAC address is Router 2 WAN.

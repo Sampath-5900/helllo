@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Web Page - 12328064</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script>
+        function showDateTime() {
+            document.getElementById("datetime").innerHTML = Date();
+        }
+    </script>
+</head>
+<body>
+    <main class="container">
+        <h1>12328064</h1>
+
+        <p class="student-text">
+            This is web page for COIT20246 Week 06 Tutorial.
+        </p>
+
+        <p>
+            <strong>Student Name:</strong> Sampath Rikkala<br>
+            <strong>Student ID:</strong> 12328064<br>
+            <strong>Unit:</strong> COIT20246 Networking and Cyber Security
+        </p>
+
+        <button onclick="showDateTime()">Show date and time</button>
+
+        <p id="datetime" class="datetime-output"></p>
+
+        <p>
+            <a href="index.html">Back to home page</a>
+        </p>
+    </main>
+</body>
+</html>

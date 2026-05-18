@@ -17,22 +17,25 @@ https://github.com/cquict2025/coit20246y26t1-project-coit20246_mel_b3_saqib_samp
 
 # Task 3 #
 The first diagram illustrates a simple LAN that has four end devices attached directly to a switch. A typical LAN topology as the switch learns MAC addresses, forwarding is done only to the proper port.
+
 ![week4-task3-lana.drawio](pictures/week4-task3-lana.drawio)
-![]
-![Week4-task3-lanb.drawio](pictures/Week4-task3-lanb.drawio)
+
+![week4-task3-lana.png](pictures/week4-task3-lana.png)
+
+![week4-task3-lanb.drawio](pictures/week4-task3-lanb.drawio)
+
+![week4-task3-lanb.png](pictures/week4-task3-lanb.png)
 
 
 The second diagram extends the LAN by providing two access switches that each connect to a central switch. Its layout works in a star topology, providing a clear structure for connection of 8 PCs and a well-organised cabling.
 
 # Task 4 #
 
+![week4-task4d.drawio](pictures/week4-task4d.drawio)
 
+![week4-task4f.drawio](pictures/week4-task4f.drawio)
 
-
-
-
-
-
+![week4-task4-ping.drawio](pictures/week4-task4-ping.drawio)
 
 ### ARP packets ###
 The virtual network interface was used to connect the Windows host and the OpenWRT Linux guest for the ping capture. The devices first had to learn the destination MAC address of the local network to be able to exchange ICMP packets. This discovery process was finished with ARP. The first ARP packet sent by the sender was an ARP request to determine which device possessed a target IP address. The destination address for Ethernet was FF:FF:FF:FF:FF:FF, as the sender did not yet have the target MAC address. The one with the same IP address replied with its MAC address, allowing the sender to add it to, or modify its ARP table. Ping was used during address resolution using ICMP Echo Request and ICMP Echo Reply messages. 
